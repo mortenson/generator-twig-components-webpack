@@ -3,14 +3,13 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const mkdirp = require('mkdirp');
 const path = require('path');
 const fs = require('fs');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
-    this.argument('libraryname', { type: String, required: false });
+    this.argument('name', { type: String, required: false });
   }
 
   prompting() {
@@ -30,7 +29,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'name',
         message: 'Library name:',
-        default: this.options.libraryname,
+        default: this.options.name,
         validate: required
       },
       {
