@@ -1,0 +1,29 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%= description %>",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "<%= author %>",
+  "license": "MIT",
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^1.0.22",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "inline-source": "^5.2.6",
+    "node-sass": "^4.7.2",
+    "on-build-webpack": "^0.1.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "twig": "^1.10.5",
+    "twig-components": "git+https://github.com/mortenson/twig-components.git",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {}
+}

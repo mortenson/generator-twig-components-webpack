@@ -1,0 +1,58 @@
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title><%= name %></title>
+    <script src="dist/components.bundled.js" charset="utf-8"></script>
+    <style>
+      .name {
+        /* This should not apply if Shadow DOM is working */
+        color: red !important;
+      }
+      body {
+        margin: 0;
+      }
+      .header {
+        background: #bacf29;
+        color: white;
+        padding: 20px;
+      }
+      .header p {
+        color: #006f9f;
+      }
+      .content {
+        background: white;
+      }
+      .component {
+        padding: 20px;
+        margin-bottom: 20px;
+        max-width: 600px;
+      }
+      .component > h2 {
+        margin-top: 0;
+      }
+      .component > *:not(.component-demo) {
+        font-weight: normal;
+      }
+      .component-demo {
+        background: white;
+        padding: 20px 30px 20px 30px;
+        margin-left: 20px;
+        border: 1px solid lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1><%= name %></h1>
+      <p><%= description %></p>
+    </div>
+    <div class="component">
+      <h3>&lt;proper-name <i>first middle last suffix</i>&gt;</h3>
+      <p>A component that displays a full name.</p>
+      <div class="component-demo">
+        <proper-name first="Bill" middle="Stanley" last="Preston" suffix="Esquire"></proper-name>
+      </div>
+    </div>
+  </body>
+</html>
