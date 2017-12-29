@@ -1,6 +1,6 @@
 # Twig Component Webpack Generator
 
-This project provides a Yeoman generator for new Twig Component libraries.
+This project provides a Yeoman generator for new [Twig Component](https://github.com/mortenson/twig-components) libraries.
 
 # Installation
 
