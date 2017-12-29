@@ -68,7 +68,7 @@ module.exports = class extends Generator {
     this.installDependencies({
       bower: false
     }).then(() => {
-      this.log(chalk.green('Finished installed dependencies.'));
+      this.log(chalk.green('Finished installing dependencies.'));
       this.log('Run ' + chalk.yellow(`cd ${this.props.name} && npm start`) + ' to see your library in action.');
     });
   }
