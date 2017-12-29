@@ -6,7 +6,7 @@ This project provides a Yeoman generator for new Twig Component libraries.
 
 ```
 npm install -g yo
-npm install -g https://github.com/mortenson/generator-twig-components-webpack
+npm install -g generator-twig-components-webpack
 ```
 
 # Use
