@@ -6,10 +6,14 @@
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
+  "scripts": {
+    "eslint": "eslint generators/app/index.js"
+  },
   "keywords": [
-    "",
-    "yeoman-generator"
+    "yeoman-generator",
+    "twig",
+    "webcomponents"
   ],
   "dependencies": {
     "chalk": "^2.1.0",
@@ -17,5 +21,10 @@
     "yosay": "^2.0.1"
   },
   "repository": "mortenson/generator-twig-components-webpack",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
 }

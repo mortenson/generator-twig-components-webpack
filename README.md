@@ -13,13 +13,14 @@ npm install -g generator-twig-components-webpack
 
 To generate a new component library, run `yo twig-components-webpack`.
 
-# The Webpack build
+# Adding new components to a library
 
 @todo
 
-# Adding new components
+# More about the build 
 
-@todo
+Please read [the generated README.md](generators/app/templates/base/README.md)
+for documentation for the generated component library.
 
 # Todo
 

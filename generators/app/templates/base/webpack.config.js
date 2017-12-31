@@ -19,7 +19,7 @@ const module_config = {
       test: /\.twig$/,
       use: [
         { loader: 'raw-loader' },
-        { loader: path.resolve('loader.js') }
+        { loader: 'inline-source-loader' }
       ]
     },
     {
