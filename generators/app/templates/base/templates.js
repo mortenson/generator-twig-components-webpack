@@ -2,5 +2,6 @@
 // of the components provided by this library.
 
 module.exports = {
-  'proper-name': require('./proper-name/proper-name.twig')
+  'proper-name': require('./proper-name/proper-name.twig'),
+  /*generator-placeholder*/
 };

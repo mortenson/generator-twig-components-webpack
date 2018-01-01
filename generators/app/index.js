@@ -69,6 +69,8 @@ module.exports = class extends Generator {
     }).then(() => {
       this.log(chalk.green('Finished installing dependencies.'));
       this.log(`Run ${chalk.yellow(`cd ${this.props.name} && npm start`)} to see your library in action.`);
+      this.log(`You can also run ${chalk.yellow(`cd ${this.props.name} && yo twig-components-webpack:add`)} to quickly add a new component.`);
+      this.log(chalk.green('Have fun!'));
     });
   }
 };

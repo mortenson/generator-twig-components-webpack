@@ -8,7 +8,7 @@
   ],
   "main": "generators/app/index.js",
   "scripts": {
-    "eslint": "eslint generators/app/index.js"
+    "eslint": "eslint generators/app/index.js generators/add/index.js"
   },
   "keywords": [
     "yeoman-generator",
@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "chalk": "^2.1.0",
+    "ejs": "^2.5.7",
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
