@@ -27,6 +27,6 @@
     "dist"
   ],
   "dependencies": {
-    "twig-components": "^0.0.2"
+    "twig-components": "^0.0.3"
   }
 }
