@@ -1,12 +1,13 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const fs = require('fs');
 const ejs = require('ejs');
+const fs = require('fs');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
+    this.conflicter.force = true;
     this.argument('name', { type: String, required: false });
     this.argument('description', { type: String, required: false });
     this.argument('attributes', { type: String, required: false });
@@ -90,7 +91,6 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    fs.mkdirSync(this.props.name);
     ['js', 'scss', 'twig'].forEach((extension) => {
       this.fs.copyTpl(
         this.templatePath(`component/component.${extension}`),
@@ -100,16 +100,15 @@ module.exports = class extends Generator {
     });
     ['components.js', 'index.html', 'templates.js'].forEach((file) => {
       if (fs.existsSync(file)) {
-        const template = fs.readFileSync(this.templatePath(file), 'utf-8');
+        const template = this.fs.read(this.templatePath(file));
         const replacement = ejs.render(
           template,
           this.props,
         );
-        const original = fs.readFileSync(file, 'utf-8');
+        const original = this.fs.read(file);
         if (original.match(/[^\n]+generator-placeholder[^\n]+/)) {
-          this.log(chalk.green(`Updated ${file}`));
           const replaced = original.replace(/[^\n]+generator-placeholder[^\n]+/, replacement);
-          fs.writeFileSync(file, replaced);
+          this.fs.write(file, replaced);
         }
       }
     });

@@ -53,7 +53,6 @@ module.exports = class extends Generator {
     if (fs.existsSync(this.props.name)) {
       this.env.error(chalk.red(`The directory ${this.props.name} already exists`));
     }
-    fs.mkdirSync(this.props.name);
     this.destinationRoot(this.destinationPath(this.props.name));
 
     this.fs.copyTpl(
