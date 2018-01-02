@@ -25,7 +25,7 @@ To remove a component from the library, delete the source folder
 (ex: `./proper-name`), then its imports and requires from `templates.js` and
 `components.js`.
 
-# More about the build 
+# More about the build
 
 Please read [the generated README.md](generators/app/templates/base/README.md)
 for documentation for the generated component library.

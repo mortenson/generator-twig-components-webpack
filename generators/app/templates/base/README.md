@@ -25,19 +25,9 @@ the page and any of the included component tags. For example:
 
 Should render the `proper-name` tag.
 
+If you prefer to manage polyfills and the Twig.js library yourself, you can
+include `components.js`.
+
 # Running the build
 
-To execute the entire Webpack build, run `npm run build`.
-
-This should generate these files:
-
-- `dist/components.js` - The components transpiled to ES5, _without_ any
-polyfills or the Twig.js library. This is useful if one page includes multiple
-component libraries.
-- `dist/components.bundled.js` - The components transpiled to ES5, _with_
-Twig.js and the polyfills included. You should be able to include this on
-any HTML page.
-- `dist/templates.js` - A Node compatible module that exports an object mapping
-tag names to Twig templates. This is useful for server side rendering in Node.
-- `dist/templates.json` - A JSON file mapping tag names to Twig templates. This
-is useful for server side rendering in PHP.
+To execute the entire production Webpack build, run `npm run build`.
