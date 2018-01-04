@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/generator-twig-components-webpack.svg)]() [![Build Status](https://travis-ci.org/mortenson/generator-twig-components-webpack.svg?branch=master)](https://travis-ci.org/mortenson/generator-twig-components-webpack)
+
 # Twig Component Webpack Generator
 
 This project provides a Yeoman generator for new [Twig Component](https://github.com/mortenson/twig-components) libraries.
