@@ -8,6 +8,7 @@
   ],
   "main": "generators/app/index.js",
   "scripts": {
+    "test": "jest",
     "eslint": "eslint generators/app/index.js generators/add/index.js"
   },
   "keywords": [
@@ -26,6 +27,17 @@
   "devDependencies": {
     "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.8.0",
+    "fs-extra": "^5.0.0",
+    "jest": "^22.0.4",
+    "jest-cli": "^22.0.4",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "generators"
+    ]
   }
 }

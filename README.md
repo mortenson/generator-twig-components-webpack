@@ -30,6 +30,13 @@ To remove a component from the library, delete the source folder
 Please read [the generated README.md](generators/app/templates/base/README.md)
 for documentation for the generated component library.
 
+# Running tests
+
+You can run tests for this project with `npm run test`. Tests are located in
+the `__tests__` directory, and written with the Yeoman test helper packages.
+See the [Yeoman documentation](http://yeoman.io/authoring/testing.html) for
+more information about writing tests.
+
 # Todo
 
 - [x] Create a sub-generator for adding new components
