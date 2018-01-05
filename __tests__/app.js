@@ -20,6 +20,8 @@ describe('generator:app', () => {
     it('creates files', () => {
       const expected = [
         '.gitignore',
+        '.travis.yml',
+        'wct.conf.json',
         '_settings.scss',
         'components.js',
         'index.html',

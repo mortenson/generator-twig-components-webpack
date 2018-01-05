@@ -25,7 +25,19 @@ new documentation, includes, and files for a basic Twig Component.
 
 To remove a component from the library, delete the source folder
 (ex: `./proper-name`), then its imports and requires from `templates.js` and
-`components.js`.
+`components.js`. If you wrote tests for this component, they will also need to
+be removed from `test/base.html`.
+
+# Test coverage included in library
+
+Test coverage is provided by default in generated libraries, using [web-component-tester](https://github.com/Polymer/web-component-tester).
+
+The default test for the `proper-name` element is located in `test/base.html`.
+A default `.travis.yml` file is also provided and should work out of the box.
+
+New coverage is not added automatically with `yo twig-components-webpack:add`,
+so you'll have to add it yourself. Documentation for web-component-tester is
+quite good, but if you have any questions feel free to file an issue.
 
 # More about the build
 
@@ -43,4 +55,4 @@ more information about writing tests.
 
 - [x] Create a sub-generator for adding new components
 - [x] Write test coverage
-- [ ] Add test coverage to generated library
+- [x] Add test coverage to generated library

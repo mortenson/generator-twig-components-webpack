@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "<%= description %>",
   "scripts": {
+    "test": "npm run build && bower install web-component-tester && wct",
     "build": "webpack",
     "start": "webpack-dev-server"
   },

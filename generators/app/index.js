@@ -62,6 +62,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(this.templatePath('base/.gitignore'), this.destinationPath('./.gitignore'));
+    this.fs.copy(this.templatePath('base/.travis.yml'), this.destinationPath('./.travis.yml'));
   }
 
   install() {
