@@ -1,5 +1,5 @@
 import ProperName from './proper-name/proper-name';
 
-customElements.define('proper-name', ProperName);
+window.customElements.define('proper-name', ProperName);
 
-/*generator-placeholder*/
+/* generator-placeholder */

@@ -5,7 +5,8 @@
   "scripts": {
     "test": "npm run build && bower install web-component-tester && wct",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "eslint": "eslint ."
   },
   "author": "<%= author %>",
   "license": "MIT",
@@ -16,6 +17,9 @@
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.7",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "inline-source-loader": "^0.0.1",
     "node-sass": "^4.7.2",
     "on-build-webpack": "^0.1.0",
