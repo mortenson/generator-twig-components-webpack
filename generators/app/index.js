@@ -65,6 +65,9 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('base/.travis.yml'), this.destinationPath('./.travis.yml'));
     this.fs.copy(this.templatePath('base/.eslintrc.json'), this.destinationPath('./.eslintrc.json'));
     this.fs.copy(this.templatePath('base/.eslintignore'), this.destinationPath('./.eslintignore'));
+    // We have to prefix package.json with an underscore to publish to npm.
+    this.fs.delete(this.destinationPath('./_package.json'));
+    this.fs.copyTpl(this.templatePath('base/_package.json'), this.destinationPath('./package.json'), this.props);
   }
 
   install() {
