@@ -67,6 +67,7 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('base/.eslintignore'), this.destinationPath('./.eslintignore'));
     // We have to prefix certain files with an underscore to publish to npm.
     this.fs.delete(this.destinationPath('./_package.json'));
+    this.fs.delete(this.destinationPath('./_.gitignore'));
     this.fs.copyTpl(this.templatePath('base/_package.json'), this.destinationPath('./package.json'), this.props);
   }
 
