@@ -44,7 +44,8 @@ module.exports = [
     },
     devServer: {
       inline: false,
-      open: true
+      open: true,
+      host: '0.0.0.0'
     },
     module: module_config,
     plugins: [
