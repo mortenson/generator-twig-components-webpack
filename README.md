@@ -11,15 +11,11 @@ npm install -g yo
 npm install -g generator-twig-components-webpack
 ```
 
-This generator can also be run using [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
-
-```
-npx -p yo -p generator-twig-components-webpack yo twig-components-webpack
-```
-
 # Use
 
 To generate a new component library, run `yo twig-components-webpack`.
+
+If you prefer to use [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b), run `npx -p yo -p generator-twig-components-webpack yo twig-components-webpack`.
 
 # Adding new components to a library
 
