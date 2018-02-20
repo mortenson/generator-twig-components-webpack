@@ -35,7 +35,7 @@ const module_config = {
 module.exports = [
   {
     entry: [
-      './node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js',
+      './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js',
       './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
       './components.js'
     ],
