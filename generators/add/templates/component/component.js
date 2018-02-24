@@ -9,3 +9,7 @@ export default class <%= className %> extends TwigBase {
     return require('./<%= name %>.twig');
   }
 }
+
+if (!window.customElements.get('<%= name %>')) {
+  window.customElements.define('<%= name %>', <%= className %>);
+}

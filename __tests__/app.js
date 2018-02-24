@@ -23,7 +23,6 @@ describe('generator:app', () => {
         '.travis.yml',
         'wct.conf.json',
         '_settings.scss',
-        'components.js',
         'index.html',
         'package.json',
         'README.md',

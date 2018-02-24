@@ -9,3 +9,7 @@ export default class ProperName extends TwigBase {
     return require('./proper-name.twig');
   }
 }
+
+if (!window.customElements.get('proper-name')) {
+  window.customElements.define('proper-name', ProperName);
+}

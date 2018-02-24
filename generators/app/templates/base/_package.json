@@ -20,6 +20,7 @@
     "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "glob": "^7.1.2",
     "inline-source-loader": "^0.0.1",
     "node-sass": "^4.7.2",
     "on-build-webpack": "^0.1.0",

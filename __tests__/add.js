@@ -19,7 +19,6 @@ describe('generator:add', () => {
 
     it('app template was copied correctly', () => {
       assert.file([
-        'components.js',
         'index.html',
         'templates.js',
       ]);
@@ -39,7 +38,6 @@ describe('generator:add', () => {
     });
 
     it('fills exisiting files with correct information', () => {
-      assert.fileContent('components.js', "import MyComponent from './my-component/my-component'");
       assert.fileContent('index.html', 'my-component');
       assert.fileContent('templates.js', "'my-component': require('./my-component/my-component.twig'),");
     });
