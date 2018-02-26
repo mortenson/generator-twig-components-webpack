@@ -113,9 +113,14 @@ module.exports = [
     module: module_config,
     plugins: [
       new WebpackOnBuildPlugin(function(stats) {
-        if (fs.existsSync(__dirname + '/dist/templates.js')) {
-          const templates = require(__dirname + '/dist/templates.js');
-          fs.writeFileSync(__dirname + '/dist/templates.json', JSON.stringify(templates, null, 2));
+        if (fs.existsSync(`${__dirname}/dist/templates.js`)) {
+          const templates = require(`${__dirname}/dist/templates.js`);
+          fs.writeFileSync(`${__dirname}/dist/templates.json`, JSON.stringify(templates, null, 2));
+          for (let tag in templates) {
+            if (templates.hasOwnProperty(tag)) {
+              fs.writeFileSync(`${__dirname}/dist/${tag}.twig`, templates[tag]);
+            }
+          }
         }
       }),
     ],
