@@ -1,6 +1,6 @@
 {
   "name": "generator-twig-components-webpack",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A generator for a Twig Component library that uses Webpack.",
   "author": "Samuel Mortenson <samuel@mortenson.coffee>",
   "files": [
