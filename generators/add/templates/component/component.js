@@ -5,8 +5,8 @@ export default class <%= className %> extends TwigBase {
     return <%- JSON.stringify(attributes).replace(/"/g, "'").replace(/,/g, ', ') %>;
   }
 
-  getTemplate() {
-    return require('./<%= name %>.twig');
+  renderTemplate(variables) {
+    return require('./<%= name %>.twig')(variables);
   }
 }
 

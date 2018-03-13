@@ -1,6 +1,5 @@
 const path = require('path');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
-const WebpackOnBuildPlugin = require('on-build-webpack');
 const fs = require('fs');
 const glob = require('glob');
 
@@ -19,15 +18,16 @@ const module_config = {
     {
       test: /\.twig$/,
       use: [
-        { loader: 'raw-loader' },
-        { loader: 'inline-source-loader' }
+        { loader: 'twig-loader' },
+        { loader: 'emit-file-loader?output=dist/templates/[path][name].[ext]' },
+        { loader: 'inline-source-loader' },
       ]
     },
     {
       test: /\.scss$/,
       use: [
         { loader: 'css-loader' },
-        { loader: 'sass-loader' }
+        { loader: 'sass-loader' },
       ],
     }
   ],
@@ -45,7 +45,7 @@ const module_config = {
  * ];
  * The property names in entryObject matches the output filename in dist.
  */
-let matches = glob.sync('./*/*.js', {
+const matches = glob.sync('./*/*.js', {
   ignore: ['./dist/**', './node_modules/**'],
 });
 let entryObject = {}, entryArray = [], name;
@@ -99,31 +99,7 @@ module.exports = [
     },
     module: module_config,
     plugins: [
-      new MinifyPlugin()
+      new MinifyPlugin(),
     ]
   },
-  {
-    entry: [
-      './templates.js'
-    ],
-    output: {
-      filename: 'dist/templates.js',
-      libraryTarget: 'commonjs2'
-    },
-    module: module_config,
-    plugins: [
-      new WebpackOnBuildPlugin(function(stats) {
-        if (fs.existsSync(`${__dirname}/dist/templates.js`)) {
-          const templates = require(`${__dirname}/dist/templates.js`);
-          fs.writeFileSync(`${__dirname}/dist/templates.json`, JSON.stringify(templates, null, 2));
-          for (let tag in templates) {
-            if (templates.hasOwnProperty(tag)) {
-              fs.writeFileSync(`${__dirname}/dist/${tag}.twig`, templates[tag]);
-            }
-          }
-        }
-      }),
-    ],
-    target: 'node'
-  }
 ];

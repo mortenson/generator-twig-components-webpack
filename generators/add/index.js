@@ -98,7 +98,7 @@ module.exports = class extends Generator {
         this.props,
       );
     });
-    ['index.html', 'templates.js'].forEach((file) => {
+    ['index.html'].forEach((file) => {
       if (fs.existsSync(file)) {
         const template = this.fs.read(this.templatePath(file));
         const replacement = ejs.render(

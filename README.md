@@ -26,7 +26,7 @@ new documentation, includes, and files for a basic Twig Component.
 # Removing components from the library
 
 To remove a component from the library, delete the source folder
-(ex: `./proper-name`), then its imports and requires from `templates.js`.
+(ex: `./proper-name`), then any documentation from `index.html`.
 
 If you wrote tests for this component, they will also need to be removed from
 `test/base.html`.
