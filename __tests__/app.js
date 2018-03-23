@@ -22,15 +22,14 @@ describe('generator:app', () => {
         '.gitignore',
         '.travis.yml',
         'wct.conf.json',
-        '_settings.scss',
+        'src/_settings.scss',
         'index.html',
         'package.json',
         'README.md',
-        'templates.js',
         'webpack.config.js',
-        'proper-name/proper-name.js',
-        'proper-name/proper-name.scss',
-        'proper-name/proper-name.twig',
+        'src/components/proper-name/proper-name.js',
+        'src/components/proper-name/proper-name.scss',
+        'src/components/proper-name/proper-name.twig',
       ];
 
       assert.file(expected);

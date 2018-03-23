@@ -25,15 +25,15 @@ describe('generator:add', () => {
 
     it('new component created', () => {
       assert.file([
-        'my-component/my-component.js',
-        'my-component/my-component.twig',
-        'my-component/my-component.scss',
+        'src/components/my-component/my-component.js',
+        'src/components/my-component/my-component.twig',
+        'src/components/my-component/my-component.scss',
       ]);
     });
 
     it('fills new component with correct information', () => {
-      assert.fileContent('my-component/my-component.js', 'MyComponent');
-      assert.fileContent('my-component/my-component.twig', '{{ foo }} {{ bar }}');
+      assert.fileContent('src/components/my-component/my-component.js', 'MyComponent');
+      assert.fileContent('src/components/my-component/my-component.twig', '{{ foo }} {{ bar }}');
     });
 
     it('fills exisiting files with correct information', () => {

@@ -14,8 +14,8 @@ module.exports = class extends Generator {
   }
 
   prompting() {
-    if (!fs.existsSync('templates.js')) {
-      this.env.error(chalk.red('No templates.js file found, please change directory to a Twig Components library and try again.'));
+    if (!fs.existsSync('src/components')) {
+      this.env.error(chalk.red('No src/components directory found, please change directory to a Twig Components library and try again.'));
     }
     this.log(yosay(`Let's add a new ${chalk.green('Twig Component')}!`));
 
@@ -94,7 +94,7 @@ module.exports = class extends Generator {
     ['js', 'scss', 'twig'].forEach((extension) => {
       this.fs.copyTpl(
         this.templatePath(`component/component.${extension}`),
-        this.destinationPath(`./${this.props.name}/${this.props.name}.${extension}`),
+        this.destinationPath(`./src/components/${this.props.name}/${this.props.name}.${extension}`),
         this.props,
       );
     });

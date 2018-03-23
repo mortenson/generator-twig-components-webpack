@@ -12,8 +12,8 @@ const module_config = {
         loader: 'babel-loader',
         options: {
           presets: ['env'],
-        }
-      }
+        },
+      },
     },
     {
       test: /\.twig$/,
@@ -21,7 +21,7 @@ const module_config = {
         { loader: 'twig-loader' },
         { loader: 'emit-file-loader?output=dist/templates/[path][name].[ext]' },
         { loader: 'inline-source-loader' },
-      ]
+      ],
     },
     {
       test: /\.scss$/,
@@ -29,7 +29,7 @@ const module_config = {
         { loader: 'css-loader' },
         { loader: 'sass-loader' },
       ],
-    }
+    },
   ],
 };
 
@@ -45,7 +45,7 @@ const module_config = {
  * ];
  * The property names in entryObject matches the output filename in dist.
  */
-const matches = glob.sync('./*/*.js', {
+const matches = glob.sync('./src/components/*/*.js', {
   ignore: ['./dist/**', './node_modules/**'],
 });
 let entryObject = {}, entryArray = [], name;
@@ -64,42 +64,42 @@ module.exports = [
       './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
     ].concat(entryArray),
     output: {
-      filename: 'dist/components.bundled.js'
+      filename: 'dist/components.bundled.js',
     },
     devServer: {
       inline: false,
       open: true,
-      host: '0.0.0.0'
-    },
-    module: module_config,
-    plugins: [
-      new MinifyPlugin()
-    ]
-  },
-  {
-    entry: entryArray,
-    output: {
-      filename: 'dist/components.js'
-    },
-    externals: {
-      'twig': 'Twig'
-    },
-    module: module_config,
-    plugins: [
-      new MinifyPlugin()
-    ]
-  },
-  {
-    entry: entryObject,
-    output: {
-      filename: 'dist/[name].js'
-    },
-    externals: {
-      'twig': 'Twig'
+      host: '0.0.0.0',
     },
     module: module_config,
     plugins: [
       new MinifyPlugin(),
-    ]
+    ],
+  },
+  {
+    entry: entryArray,
+    output: {
+      filename: 'dist/components.js',
+    },
+    externals: {
+      'twig': 'Twig',
+    },
+    module: module_config,
+    plugins: [
+      new MinifyPlugin(),
+    ],
+  },
+  {
+    entry: entryObject,
+    output: {
+      filename: 'dist/[name].js',
+    },
+    externals: {
+      'twig': 'Twig',
+    },
+    module: module_config,
+    plugins: [
+      new MinifyPlugin(),
+    ],
   },
 ];
