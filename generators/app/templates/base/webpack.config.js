@@ -19,7 +19,7 @@ const module_config = {
       test: /\.twig$/,
       use: [
         { loader: 'twig-loader' },
-        { loader: 'emit-file-loader?output=dist/templates/[path][name].[ext]' },
+        { loader: 'emit-file-loader?output=dist/templates/[name].[ext]' },
         { loader: 'inline-source-loader' },
       ],
     },
