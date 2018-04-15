@@ -19,7 +19,7 @@ const module_config = {
       test: /\.twig$/,
       use: [
         { loader: 'twig-loader' },
-        { loader: 'emit-file-loader?output=dist/templates/[name].[ext]' },
+        { loader: 'emit-file-loader?output=templates/[name].[ext]' },
         { loader: 'inline-source-loader' },
       ],
     },
@@ -45,9 +45,7 @@ const module_config = {
  * ];
  * The property names in entryObject matches the output filename in dist.
  */
-const matches = glob.sync('./src/components/*/*.js', {
-  ignore: ['./dist/**', './node_modules/**'],
-});
+const matches = glob.sync('./src/components/*/*.js');
 let entryObject = {}, entryArray = [], name;
 for (let i in matches) {
   if (matches.hasOwnProperty(i)) {
@@ -57,19 +55,27 @@ for (let i in matches) {
   }
 }
 
+// Change this to production when you're ready to release /dist.
+const mode = 'development';
+
 module.exports = [
   {
+    mode: mode,
     entry: [
       './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js',
       './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
     ].concat(entryArray),
     output: {
-      filename: 'dist/components.bundled.js',
+      filename: 'components.bundled.js',
     },
     devServer: {
       inline: false,
       open: true,
       host: '0.0.0.0',
+      publicPath: '/dist/',
+    },
+    externals: {
+      'vertx': 'vertx',
     },
     module: module_config,
     plugins: [
@@ -77,9 +83,10 @@ module.exports = [
     ],
   },
   {
+    mode: mode,
     entry: entryArray,
     output: {
-      filename: 'dist/components.js',
+      filename: 'components.js',
     },
     externals: {
       'twig': 'Twig',
@@ -90,9 +97,10 @@ module.exports = [
     ],
   },
   {
+    mode: mode,
     entry: entryObject,
     output: {
-      filename: 'dist/[name].js',
+      filename: '[name].js',
     },
     externals: {
       'twig': 'Twig',

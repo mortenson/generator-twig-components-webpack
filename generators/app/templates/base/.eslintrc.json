@@ -6,6 +6,6 @@
   "rules": {
     "global-require": "off",
     "import/first": "off",
-    "class-methods-use-this": [2, { "exceptMethods": ["getTemplate"] }]
+    "class-methods-use-this": [2, { "exceptMethods": ["getTemplate", "renderTemplate"] }]
   }
 }
