@@ -69,7 +69,6 @@ module.exports = [
       filename: 'components.bundled.js',
     },
     devServer: {
-      inline: false,
       open: true,
       host: '0.0.0.0',
       publicPath: '/dist/',
