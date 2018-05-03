@@ -53,12 +53,7 @@ To execute the entire production Webpack build, run `npm run build`.
 
 # Running tests
 
-Tests are written with the [web-component-tester](https://github.com/Polymer/web-component-tester)
+Tests are written with the [web-component-tester](https://github.com/Polymer/tools/tree/master/packages/web-component-tester)
 package.
 
-Before running tests, you'll need to setup your local environment:
-
-1. Ensure Java is available in your `PATH`
-1. Run `npm install -g bower rollup web-component-tester`
-
-After all dependencies have been installed, run `npm test`.
+To run tests, ensure Java is available in your `PATH`, then run `npm test`.

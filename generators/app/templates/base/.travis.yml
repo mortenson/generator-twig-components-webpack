@@ -1,9 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-  - node
-before_script:
-  - npm install -g bower web-component-tester rollup
+  - 8
 script:
   - xvfb-run npm test
 addons:

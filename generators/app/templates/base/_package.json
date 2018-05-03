@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "<%= description %>",
   "scripts": {
-    "test": "npm run build && bower install web-component-tester && wct",
+    "test": "npm run build && wct --npm",
     "build": "webpack",
     "start": "webpack-dev-server",
     "eslint": "eslint ."
@@ -27,6 +27,8 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "twig-loader": "^0.3.1",
+    "wct-browser-legacy": "0.0.1-pre.12",
+    "web-component-tester": "^6.6.0-pre.5",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.3"
