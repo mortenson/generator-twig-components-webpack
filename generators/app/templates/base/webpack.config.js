@@ -62,7 +62,7 @@ module.exports = [
   {
     mode: mode,
     entry: [
-      './node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js',
+      './node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js',
       './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js',
     ].concat(entryArray),
     output: {
